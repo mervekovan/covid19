@@ -1,2 +1,2 @@
 # covid19
-Random analyses for covid data to keep me sane
+Random analyses for different covid19 related data from sources like [JHU](https://github.com/CSSEGISandData/COVID-19)
