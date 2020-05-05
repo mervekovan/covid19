@@ -1,12 +1,13 @@
 [[source]]
-url = 'https://pypi.python.org/simple'
+url = "https://pypi.python.org/simple"
 verify_ssl = true
-name = 'pypi'
+name = "pypi"
 
 [requires]
-python_version = '3.7'
+python_version = "3.7"
 
 [packages]
+imbalanced-learn = "==0.7.*"
 ipython = "==7.14.*"
 jupyter = "==1.0.*"
 matplotlib = "==3.2.*"
@@ -15,4 +16,3 @@ plotly = "==4.6.*"
 scikit-learn = "==0.23.*"
 statsmodels = "==0.11.*"
 tensorflow = "==2.1.*"
-imbalanced-learn = "==0.7.*"
