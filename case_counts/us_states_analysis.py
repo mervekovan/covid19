@@ -171,26 +171,46 @@ def main():
             color="#7f7f7f"
         )
     )
-    fig.add_scatter(x=cadf.day_no, y=cadf.daily_cases, name='CA', row=1, col=1)
-    fig.add_scatter(x=nydf.day_no, y=nydf.daily_cases, name='NY', row=1, col=1)
-    fig.add_scatter(x=wadf.day_no, y=wadf.daily_cases, name='WA', row=1, col=1)
-    fig.add_scatter(x=ordf.day_no, y=ordf.daily_cases, name='OR', row=1, col=1)
-    fig.add_scatter(x=padf.day_no, y=padf.daily_cases, name='PA', row=1, col=1)
-    fig.add_scatter(x=nedf.day_no, y=nedf.daily_cases, name='NE', row=1, col=1)
-    fig.add_scatter(x=ardf.day_no, y=ardf.daily_cases, name='AR', row=1, col=1)
-    fig.add_scatter(x=ohdf.day_no, y=ohdf.daily_cases, name='OH', row=1, col=1)
-    fig.add_scatter(x=madf.day_no, y=madf.daily_cases, name='MA', row=1, col=1)
-    fig.add_scatter(x=fldf.day_no, y=fldf.daily_cases, name='FL', row=1, col=1)
+    fig.add_scatter(x=cadf.day_no, y=cadf.daily_cases, name='CA', legendgroup='CA',
+                    line=dict(color="red"), row=1, col=1)
+    fig.add_scatter(x=nydf.day_no, y=nydf.daily_cases, name='NY', legendgroup='NY',
+                    line=dict(color="blue"), row=1, col=1)
+    fig.add_scatter(x=wadf.day_no, y=wadf.daily_cases, name='WA', legendgroup='WA',
+                    line=dict(color="green"), row=1, col=1)
+    fig.add_scatter(x=ordf.day_no, y=ordf.daily_cases, name='OR', legendgroup='OR',
+                    line=dict(color="purple"), row=1, col=1)
+    fig.add_scatter(x=padf.day_no, y=padf.daily_cases, name='PA', legendgroup='PA',
+                    line=dict(color="yellow"), row=1, col=1)
+    fig.add_scatter(x=nedf.day_no, y=nedf.daily_cases, name='NE', legendgroup='NE',
+                    line=dict(color="cyan"), row=1, col=1)
+    fig.add_scatter(x=ardf.day_no, y=ardf.daily_cases, name='AR', legendgroup='AR',
+                    line=dict(color="brown"), row=1, col=1)
+    fig.add_scatter(x=ohdf.day_no, y=ohdf.daily_cases, name='OH', legendgroup='OH',
+                    line=dict(color="magenta"), row=1, col=1)
+    fig.add_scatter(x=madf.day_no, y=madf.daily_cases, name='MA', legendgroup='MA',
+                    line=dict(color="orange"), row=1, col=1)
+    fig.add_scatter(x=fldf.day_no, y=fldf.daily_cases, name='FL', legendgroup='FL',
+                    line=dict(color="pink"), row=1, col=1)
 
-    fig.add_scatter(x=cadf.day_no, y=cadf.total_cases, name='CA', row=1, col=2)
-    fig.add_scatter(x=nydf.day_no, y=nydf.total_cases, name='NY', row=1, col=2)
-    fig.add_scatter(x=wadf.day_no, y=wadf.total_cases, name='WA', row=1, col=2)
-    fig.add_scatter(x=ordf.day_no, y=ordf.total_cases, name='OR', row=1, col=2)
-    fig.add_scatter(x=padf.day_no, y=padf.total_cases, name='PA', row=1, col=2)
-    fig.add_scatter(x=nedf.day_no, y=nedf.total_cases, name='NE', row=1, col=2)
-    fig.add_scatter(x=ardf.day_no, y=ardf.total_cases, name='AR', row=1, col=2)
-    fig.add_scatter(x=ohdf.day_no, y=ohdf.total_cases, name='OH', row=1, col=2)
-    fig.add_scatter(x=madf.day_no, y=madf.total_cases, name='MA', row=1, col=2)
-    fig.add_scatter(x=fldf.day_no, y=fldf.total_cases, name='FL', row=1, col=2)
-    fig.write_image("case_counts/figures/states_case_counts.png")
-    # fig.show()
+    fig.add_scatter(x=cadf.day_no, y=cadf.total_cases, name='CA', legendgroup='CA',
+                    showlegend=False, line=dict(color="red"), row=1, col=2)
+    fig.add_scatter(x=nydf.day_no, y=nydf.total_cases, name='NY', legendgroup='NY',
+                    showlegend=False, line=dict(color="blue"), row=1, col=2)
+    fig.add_scatter(x=wadf.day_no, y=wadf.total_cases, name='WA', legendgroup='WA',
+                    showlegend=False, line=dict(color="green"), row=1, col=2)
+    fig.add_scatter(x=ordf.day_no, y=ordf.total_cases, name='OR', legendgroup='OR',
+                    showlegend=False, line=dict(color="purple"), row=1, col=2)
+    fig.add_scatter(x=padf.day_no, y=padf.total_cases, name='PA', legendgroup='PA',
+                    showlegend=False, line=dict(color="yellow"), row=1, col=2)
+    fig.add_scatter(x=nedf.day_no, y=nedf.total_cases, name='NE', legendgroup='NE',
+                    showlegend=False, line=dict(color="cyan"), row=1, col=2)
+    fig.add_scatter(x=ardf.day_no, y=ardf.total_cases, name='AR', legendgroup='AR',
+                    showlegend=False, line=dict(color="brown"), row=1, col=2)
+    fig.add_scatter(x=ohdf.day_no, y=ohdf.total_cases, name='OH', legendgroup='OH',
+                    showlegend=False, line=dict(color="magenta"), row=1, col=2)
+    fig.add_scatter(x=madf.day_no, y=madf.total_cases, name='MA', legendgroup='MA',
+                    showlegend=False, line=dict(color="orange"), row=1, col=2)
+    fig.add_scatter(x=fldf.day_no, y=fldf.total_cases, name='FL', legendgroup='FL',
+                    showlegend=False, line=dict(color="pink"), row=1, col=2)
+    # fig.write_image("case_counts/figures/states_case_counts.png")
+    fig.show()
