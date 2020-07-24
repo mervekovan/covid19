@@ -72,7 +72,7 @@ to find a better threshold that fits business case.
 For business use case, it might be hard to define this trade-off numerically.
 In that case, we could still use a couple thresholds to make decisions in slightly different ways.
 For example, we can put the results of the model into multiple buckets: high risk, low risk and medium.
-Here, high risk bucket could be the ones that are automatically labeled as fraud, for this bucket we probably want a high precision, and we can choose the threshold that gives us the highest precision.
+Here, high risk bucket could be the ones that are automatically labeled as fraud, for this bucket we probably want a high precision, and we can choose the threshold that gives us the highest precision (or highest while certain recall is achieved).
 The medium risk bucket would be the ones that are predicted to be fraud with the above threshold which are not already in the high risk bucket. These fraud items would need a second look and require an approval from a human.
 The rest of the items would be considered low risk and only randomly selected few would go through a human check.
 This human in the loop approach would not only be good for business case, but also give us new labeled data to improve the model.
@@ -106,3 +106,15 @@ The best F1 score has a threshold of 0.9031020795733965 with higher f1 score tha
   Precision: 0.842696629213483
   Recall: 0.842696629213483
 ```
+
+We can tune for amount of over-sampling, by trying a range of values and finding the best fitting one.
+Below table shows the amount of Synthetic oversampling along with the metrics of logistic regression using this data:
+
+![SMOTE ratios and scores](images/smote_scores.png)
+
+The highest F1 score with default threshold is achieved by using an over-sampling ratio of 1% (i.e. only 1% of training is fraud).
+The top 5 default F1 score comes from using SMOTE to increase fraud cases up to 5%.
+This makes sense, since we have very limited amount of fraud data, when we introduce more and more synthetic
+examples, we are amplifying the noise in this data.
+Another thing to note is as we increase the number of synthetic examples, the best possible f1 score for the over-sampled case gets slightly better. However, for most of these cases, the threshold also becomes very high (> .99).
+For these reasons, I will only use up to 5% over-sampling in fraud data.
