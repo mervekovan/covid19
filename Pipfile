@@ -7,7 +7,7 @@ name = 'pypi'
 python_version = '3.7'
 
 [packages]
-ipython = "==7.14.*"
+ipython = "==7.16.*"
 jupyter = "==1.0.*"
 matplotlib = "==3.2.*"
 pandas = "==1.0.*"
